@@ -990,4 +990,40 @@
         <Value value="Hatchery"/>
         <Find value="0"/>
     </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="WorkerProbeHasShiftVespeneBug">
+        <Compare value="LE"/>
+        <Behavior value="WorkerVespeneBugOnProbe"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="IsAssimilatorRich">
+        <Value value="AssimilatorRich"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="IsAssimilatorCombine">
+        <CombineArray value="IsAssimilator"/>
+        <CombineArray value="IsAssimilatorRich"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="WorkerNotCarryingVespeneUnnamed">
+        <Categories index="User6" value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="WorkerProbeHasNoVespeneAndNoBug">
+        <Type value="And"/>
+        <CombineArray value="WorkerNotCarryingVespeneUnnamed"/>
+        <CombineArray value="WorkerProbeHasShiftVespeneBug"/>
+    </CValidatorCombine>
+    <CValidatorIsUnitTracked id="MothershipTargetFire">
+        <Find value="1"/>
+        <BehaviorLink value="MothershipTargetFireTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CValidatorIsUnitTracked>
+    <CValidatorCombine id="MothershipSingleTargetFilter">
+        <CombineArray value="FriendlyTargetExcludeSelf"/>
+        <CombineArray value="IsDisguisedChangeling"/>
+    </CValidatorCombine>
+    <CValidatorIsUnitTracked id="NotRecentMothershipTarget">
+        <BehaviorLink value="MothershipLastTargetTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CValidatorIsUnitTracked>
+    <CValidatorUnitCompareBehaviorCount id="IsDisguisedChangeling">
+        <Compare value="NE"/>
+        <Behavior value="ChangelingDisable"/>
+    </CValidatorUnitCompareBehaviorCount>
 </Catalog>

@@ -61,7 +61,8 @@
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorCreepSource>
     <CBehaviorBuff id="PsiStorm">
-        <Duration value="1.9"/>
+        <Duration value="0.3808"/>
+        <Period value="0.2854"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="QueenMustBeOnCreep">
         <InfoFlags index="Hidden" value="1"/>
@@ -665,7 +666,9 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <MaxStackCount value="65535"/>
         <MaxStackCountPerCaster value="1"/>
-        <Duration value="1"/>
+        <Duration value="0.0625">
+            <AccumulatorArray value="CasterAttackCooldownFinal"/>
+        </Duration>
         <InfoFlags index="Hidden" value="1"/>
         <TimeScaleSource Value="Caster"/>
     </CBehaviorBuff>
@@ -937,7 +940,7 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="StasisWardTimedLife" parent="TimedLife">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Duration value="238"/>
+        <Duration value="126"/>
         <DisableValidatorArray value="NotUnderConstruction"/>
         <DisplayDuration index="Neutral" value="1"/>
         <DisplayDuration index="Enemy" value="1"/>
@@ -1135,6 +1138,11 @@
         <PeriodicEffect value="WorkerVespeneProximitySearch"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="WorkerVespeneBugOnProbe">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2.1"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="WorkerVespeneWalking">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -1154,5 +1162,36 @@
         </Modification>
         <BuffFlags index="RefreshStack" value="1"/>
         <MaxStackCount value="2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MothershipDisableDummyWeapon">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="OrderTargetNotPoint"/>
+        <Modification>
+            <WeaponDisableArray value="PurifierBeamDummyTargetFire"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorUnitTracker id="MothershipLastTargetTracker">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxTrackedUnits value="4"/>
+        <UnitAddedAtMaxRule value="ReplaceOldest"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorUnitTracker>
+    <CBehaviorUnitTracker id="MothershipTargetFireTracker">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <TrackingValidatorArray value="CasterNotHoldingPosition"/>
+        <MaxTrackedUnits value="4"/>
+        <UnitAddedAtMaxRule value="ReplaceOldest"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorUnitTracker>
+    <CBehaviorBuff id="UnloadAcquireTarget">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.125"/>
+        <FinalEffect value="AcquireTargetUnloadSearch"/>
+        <Modification>
+            <ModifyFlags index="OrdersUninterruptible" value="1"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
 </Catalog>

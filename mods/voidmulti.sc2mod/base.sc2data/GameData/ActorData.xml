@@ -196,6 +196,7 @@
         <ImpactMap index="Shield" Sound="" ModelReaction=""/>
     </CActorAction>
     <CActorModel id="GuardianShield">
+        <Inherits index="Visibility" value="0"/>
         <HostSiteOps Ops="SOpAttachCenter GuardianShieldVisualOffset"/>
     </CActorModel>
     <CActorSiteOpLocalOffset id="GuardianShieldVisualOffset">
@@ -269,6 +270,9 @@
     </CActorSplat>
     <CActorSplat id="LiberatorAGTargetCursorSplat_Upgrade" parent="CursorSplat" abil="LiberatorAGTarget">
         <On Terms="ActorCreation; !ValidatePlayer LiberatorAGRangeUpgraded" Send="Destroy"/>
+    </CActorSplat>
+    <CActorSplat id="PurificationNovaCursorSplat" parent="ProtossCursorSplat" abil="PurificationNovaTargeted">
+        <Scale value="1.600000"/>
     </CActorSplat>
     <CActorUnit id="ParasiticBombRelayDummy" parent="GenericUnitStandardNoAutoSoundLinks" unitName="ParasiticBombRelayDummy">
         <Model value="Invisible"/>
@@ -2463,7 +2467,10 @@
         <LaunchAssets Sound=""/>
     </CActorAction>
     <CActorUnit id="Ravager">
+        <On index="78" Send="TimerSet 0.100000 RavAnimationSwitch"/>
         <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="AnimClear Spell"/>
+        <On Terms="TimerExpired; UnitWalking; TimerName RavAnimationSwitch" Send="$Spell 0 3.000000 2.000000 1.000000 AsTimeScale 0.000000 1"/>
+        <On Terms="Abil.RavagerCorrosiveBile.SourceCastStart" Send="$Spell"/>
     </CActorUnit>
     <CActorRange id="ShieldBatteryRange">
         <On index="1" Terms="Abil.ShieldBatteryRechargeEx5.TargetOn"/>
@@ -2782,4 +2789,25 @@
         <On Terms="Effect.CausticSprayBasePersistent.Start" Send="AnimBracketStart Spell Spell Spell Stand ContentForceLooping 0.500000 AsTimeScale"/>
         <On Terms="Effect.CausticSprayBasePersistent.Stop" Send="AnimBracketStop Spell"/>
     </CActorUnit>
+    <CActorUnit id="OracleStasisTrap">
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PlaceholderActorModel value="OracleStasisTrapPlaceholder"/>
+    </CActorUnit>
+    <CActorModel id="OracleStasisTrapPlaceholder" parent="PlacementModel">
+        <HostSiteOps Ops="SOpShadowAsyncPrecise" HoldPosition="1" HoldRotation="1"/>
+        <On index="0" Terms="ActorCreation" Send="SetLocalTintColor 201,175,175"/>
+        <On Terms="ActorCreation; ModelIsLowQuality" Send="SetOpacity 0.750000"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
+    </CActorModel>
+    <CActorModel id="StimpackEndImpact">
+        <Inherits index="Visibility" value="1"/>
+    </CActorModel>
+    <CActorModel id="RavagerTargetImpactFire" parent="ModelAnimationStyleOneShotUNIT">
+        <On Terms="Effect.RavagerCorrosiveBileDamage.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOverhead SOpMoveDownByDot35"/>
+        <Model value="SiegeTankSiegedAttackDamage"/>
+        <Scale value="1.200000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
 </Catalog>

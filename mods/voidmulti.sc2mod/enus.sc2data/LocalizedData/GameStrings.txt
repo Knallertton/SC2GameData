@@ -13,7 +13,6 @@ Abil/Name/DarkShrineResearch=Dark Shrine Research
 Abil/Name/DarkTemplarBlink=Dark Templar Blink
 Abil/Name/EnergyRecharge=Energy Recharge
 Abil/Name/HydraliskFrenzy=Lunge
-Abil/Name/InfestationPitResearch=Infestation Pit Research
 Abil/Name/InfestorEnsnare=Infestor Ensnare
 Abil/Name/LaunchInterceptors=Launch Interceptors
 Abil/Name/LockOnAir=Lock On Air
@@ -72,7 +71,7 @@ Behavior/Name/RavenShredderMissileTint=Anti-Armor Missile Targeting
 Behavior/Name/ResonatingGlaivesPhaseShift=Resonating Glaives
 Behavior/Name/TempestDisruptionBlastStunBehavior=Disruption Blast
 Behavior/Name/Transfusion=Transfusion
-Behavior/Tooltip/AmorphousArmorcloud=Incoming damage from air units is reduced by <d ref="Behavior,AmorphousArmorcloud,DamageResponse.ModifyFraction*100" precision="1"/>%.
+Behavior/Tooltip/AmorphousArmorcloud=Incoming ranged damage is reduced by <d ref="Behavior,AmorphousArmorcloud,DamageResponse.ModifyFraction*100" precision="1"/>%.
 Behavior/Tooltip/BatteryOvercharge=Restoration rate increased. Not consuming energy.
 Behavior/Tooltip/BypassArmorDebuffOne=This unit's armor is reduced.
 Behavior/Tooltip/BypassArmorDebuffThree=This unit's armor is reduced.

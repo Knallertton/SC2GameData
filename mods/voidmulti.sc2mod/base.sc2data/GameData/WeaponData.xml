@@ -376,19 +376,36 @@
         <EditorCategories value="Race:Protoss"/>
         <Options index="Hidden" value="1"/>
         <Options index="LinkedCooldown" value="0"/>
+        <Options index="DisplayCooldown" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
         <DisplayAttackCount value="4"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AcquireScanFilters value="-;Player,Ally,Neutral"/>
         <Range value="7"/>
         <RangeSlop value="4"/>
         <TeleportResetRange value="0"/>
         <Arc value="360"/>
-        <Period value="1"/>
         <DamagePoint value="0"/>
-        <Effect value="TargetFirePriority"/>
         <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
         <AllowedMovement value="Moving"/>
+        <!--5.0.15 Data-->
+        <!--AcquireScanFilters value="-;Player,Ally,Neutral"/        Remove this line-->
+        <AcquireScanFilters value="-;Player,Ally,Neutral,Enemy"/>
+        <!--Period value="1"/            Remove this line-->
+        <Period value="0"/>
+        <!--Effect value="TargetFirePriority"/      Remove this line-->
+        <Effect value="MothershipAddTargetFire"/>
+        <AcquireFilters value="-;Player,Ally,Neutral,Enemy"/>
+        <AcquireTargetSorts>
+            <SortArray value="MothershipTrackedTargetFire"/>
+            <SortArray value="MothershipPreferNewTargets"/>
+            <SortArray value="TSThreatenBattlecruiser"/>
+            <SortArray value="TSPriorityDesc"/>
+            <SortArray value="TSDistance"/>
+        </AcquireTargetSorts>
+        <Backswing value="0"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="MothershipBeam">
         <AcquireScanFilters value="-;Player,Ally,Neutral"/>
@@ -396,10 +413,11 @@
         <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
         <RangeSlop value="4"/>
+        <Options index="LinkedCooldown" value="0"/>
         <Options index="DisplayCooldown" value="1"/>
         <DisplayAttackCount value="4"/>
-    </CWeaponLegacy>
-    <CWeaponLegacy id="NeedleClaws">
-        <Period value="0.8"/>
+        <Backswing value="0"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
     </CWeaponLegacy>
 </Catalog>
