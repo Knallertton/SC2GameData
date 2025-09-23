@@ -40,11 +40,17 @@
     <CBehaviorBuff id="DarkTemplarBlinkAttackDelay">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Duration value="1"/>
+        <Duration value="0.5"/>
         <Modification>
             <StateFlags index="SuppressAttack" value="1"/>
             <AbilCategoriesEnable index="Passive" value="1"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Detector15" parent="Detector">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-status-detector.dds"/>
+        <Modification Detect="15"/>
     </CBehaviorBuff>
     <CBehaviorCreepSource id="NydusCreepGrowth">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
@@ -54,6 +60,9 @@
         <Grown value="Footprint4x4CreepSourceGrown"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorCreepSource>
+    <CBehaviorBuff id="PsiStorm">
+        <Duration value="1.9"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="QueenMustBeOnCreep">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
@@ -191,10 +200,12 @@
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-zerg-darkswarm.dds"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
-        <Duration value="5"/>
+        <Duration value="1"/>
         <DamageResponse ModifyFraction="0.5">
             <Kind index="Spell" value="0"/>
-            <ValidatorArray value="TargetIsNotGround"/>
+            <Kind index="Melee" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>

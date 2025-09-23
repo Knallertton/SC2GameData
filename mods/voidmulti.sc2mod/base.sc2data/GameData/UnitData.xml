@@ -1059,6 +1059,10 @@
         <WeaponArray index="0" Link="PurifierBeamDummyTargetFire" Turret=""/>
         <WeaponArray index="1" Link="MothershipBeam" Turret="FreeRotate"/>
         <WeaponArray Turret="MothershipRotate"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <ShieldsStart value="300"/>
+        <ShieldsMax value="300"/>
     </CUnit>
     <CUnit id="MothershipCore">
         <SubgroupPriority value="90"/>
@@ -1141,16 +1145,20 @@
         <Acceleration value="0"/>
         <StationaryTurningRate value="0"/>
         <TurningRate value="0"/>
-        <Sight value="13.75"/>
+        <Sight value="15"/>
         <Height value="5"/>
-        <BehaviorArray index="0" Link="Detector13p75"/>
+        <BehaviorArray index="0" Link="Detector15"/>
         <CardLayouts index="0">
-            <LayoutButtons index="8" Face="MorphtoObserver" Type="AbilCmd" AbilCmd="ObserverSiegeMorphtoObserver,Execute" Row="2" Column="1"/>
+            <LayoutButtons index="6" Face="Detector" Column="3"/>
+            <LayoutButtons index="7" Face="MorphtoObserver" Type="AbilCmd" AbilCmd="ObserverSiegeMorphtoObserver,Execute" Column="1"/>
+            <LayoutButtons index="8" removed="1"/>
         </CardLayouts>
         <AbilArray index="2" Link="ObserverSiegeMorphtoObserver"/>
         <GlossaryCategory value=""/>
         <ScoreMake value="0"/>
         <ScoreResult value=""/>
+        <FlagArray index="Cloaked" value="0"/>
+        <FogVisibility value="Visible"/>
     </CUnit>
     <CUnit id="Oracle">
         <SubgroupPriority value="84"/>
@@ -1582,6 +1590,8 @@
         <LifeStart value="175"/>
         <LifeMax value="175"/>
         <GlossaryStrongArray index="1" value="Roach"/>
+        <Attributes index="Hover" value="1"/>
+        <Attributes index="Heroic" value="1"/>
     </CUnit>
     <CUnit id="SpawningPool">
         <Collide index="Locust" value="1"/>
@@ -1608,6 +1618,8 @@
         <Collide index="Locust" value="1"/>
         <Collide index="Phased" value="1"/>
         <SubgroupPriority value="24"/>
+        <CostResource index="Minerals" value="200"/>
+        <CostResource index="Vespene" value="150"/>
     </CUnit>
     <CUnit id="SporeCrawler">
         <Collide index="Locust" value="1"/>
@@ -1990,6 +2002,8 @@
         <CardLayouts index="0">
             <LayoutButtons Face="ResearchSmartServos" Type="Passive" Requirements="HaveSmartServos" Row="2" Column="2"/>
         </CardLayouts>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="50"/>
     </CUnit>
     <CUnit id="VikingFighter">
         <SubgroupPriority value="68"/>
@@ -2002,6 +2016,8 @@
         <CardLayouts index="0">
             <LayoutButtons Face="ResearchSmartServos" Type="Passive" Requirements="HaveSmartServos" Row="2" Column="2"/>
         </CardLayouts>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="50"/>
     </CUnit>
     <CUnit id="Viper">
         <AbilArray Link="ParasiticBomb"/>

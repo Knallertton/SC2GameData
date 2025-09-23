@@ -902,9 +902,13 @@ Behavior/Tooltip/WarpInVulnerability=Takes double damage while warping in
 Bundle/Description/WarChestSeason6ProtossSkinsBundle=
 Bundle/Description/WarChestSeason6TerranSkinsBundle=
 Bundle/Description/WarChestSeason6ZergSkinsBundle=
+Bundle/Name/CNBundle1=China Campaign Collection
+Bundle/Name/CNBundle2=China Campaign Collection Digital Deluxe
 Bundle/Name/WarChestSeason6ProtossSkinsBundle=Protoss Ihan-rii Structures Bundle
 Bundle/Name/WarChestSeason6TerranSkinsBundle=Terran Tyrador Structures Bundle
 Bundle/Name/WarChestSeason6ZergSkinsBundle=Zerg Cerberus Structures Bundle
+Bundle/ShortName/CNBundle1=China Campaign Collection
+Bundle/ShortName/CNBundle2=China Campaign Collection Digital Deluxe
 Button/Name/250mmStrikeCannons=250mm Strike Cannons
 Button/Name/AWrp=Archon Merge
 Button/Name/AcquireMove=Scan Move
@@ -9965,6 +9969,7 @@ UI/SocialPanel/StatusAvailable=<img path="Assets\Textures\UI_Glues_Icons_Status_
 UI/SocialPanel/StatusAway=<img path="Assets\Textures\UI_Glues_Icons_Status_Away.dds" height="13" width="13" alignment="absolutemiddle"/>  Away
 UI/SocialPanel/StatusBusy=<img path="Assets\Textures\UI_Glues_Icons_Status_Busy.dds" height="13" width="13" alignment="absolutemiddle"/>  Busy
 UI/Spawning=Birthing
+UI/StoreTypeName/Bundle=China Campaign Collection Digital Deluxe
 UI/SupplyCost=Supply: %1
 UI/Training=Training
 UI/Upgrading=Upgrading

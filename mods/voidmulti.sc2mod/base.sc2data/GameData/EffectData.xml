@@ -362,6 +362,15 @@
         <ValidatorArray index="0" value="MultipleHitGroundOnlyAttackTargetFilter"/>
         <ValidatorArray value="ZealotAttackDamageMaxRange"/>
     </CEffectDamage>
+    <CEffectDamage id="PsiStormDamage">
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="PsiStormDamageInitial">
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="PsiStormPersistent">
+        <PeriodicPeriodArray index="0" value="2"/>
+    </CEffectCreatePersistent>
     <CEffectSet id="RavenScramblerDummy">
         <EditorCategories value="Race:Terran"/>
     </CEffectSet>
@@ -902,7 +911,7 @@
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetUnit"/>
         <InitialEffect value="EnergyRecharge"/>
-        <PeriodCount value="3"/>
+        <PeriodCount value="1"/>
         <PeriodicValidator value="TargetNotDead"/>
         <PeriodicEffectArray value="EnergyRecharge"/>
         <PeriodicPeriodArray value="0.476"/>
@@ -2379,11 +2388,8 @@
         <Behavior value="CycloneLockOnCooldown"/>
     </CEffectApplyBehavior>
     <CEffectSet id="CycloneWeaponLaunchSet">
-        <ValidatorArray value="NotHaveCycloneLockOnCooldownBehavior"/>
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="CycloneWeaponLaunchMissileSwitch"/>
-        <EffectArray value="CycloneCooldownAB"/>
-        <EffectArray value="CycloneLockOnAddCDtodefaultweapon"/>
     </CEffectSet>
     <CEffectDamage id="FungalGrowthDamage">
         <Amount value="1.5625"/>
@@ -2431,9 +2437,6 @@
     <CEffectDamage id="DisruptionBeamDamage">
         <ShieldBonus value="4"/>
     </CEffectDamage>
-    <CEffectModifyUnit id="LockOnResetCooldown">
-        <Cost index="0" CooldownTimeUse="4"/>
-    </CEffectModifyUnit>
     <CEffectEnumArea id="WidowMineNotificationSearch">
         <ValidatorArray value="CasterIsVisible"/>
         <EditorCategories value=""/>
@@ -2683,9 +2686,9 @@
         </TargetSorts>
         <AreaArray MaxCount="4" Radius="7" Effect="MothershipBeamSet"/>
         <MinCount value="1"/>
-        <SearchFlags index="CenterAtLaunch" value="1"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="0"/>
+        <ImpactLocation Value="CasterUnit"/>
     </CEffectEnumArea>
     <CEffectSet id="GravitonBeamInitialSet">
         <EffectArray value="GravitonBeamBehavior"/>

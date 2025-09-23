@@ -64,6 +64,10 @@
     </CUpgrade>
     <CUpgrade id="CentrificalHooks">
         <ScoreAmount value="200"/>
+        <EffectArray Reference="Unit,Baneling,LifeMax" Value="5"/>
+        <EffectArray Reference="Unit,Baneling,LifeStart" Value="5"/>
+        <EffectArray Reference="Unit,BanelingBurrowed,LifeStart" Value="5"/>
+        <EffectArray Reference="Unit,BanelingBurrowed,LifeMax" Value="5"/>
     </CUpgrade>
     <CUpgrade id="Charge">
         <EffectArray index="0" Value="1.125000"/>
@@ -84,8 +88,6 @@
     </CUpgrade>
     <CUpgrade id="ChitinousPlating"/>
     <CUpgrade id="DrillClaws">
-        <EffectArray index="0" Value="1.500000"/>
-        <EffectArray index="1" Value="1.500000"/>
         <!--EffectArray Operation="Set" Reference="Behavior,WidowMineBurrowedCloakingBehavior,Modification.StateFlags[SuppressCloak]" Value="0"/-->
         <EffectArray Operation="Subtract" Reference="Abil,WidowMineUnburrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="0.500000"/>
         <EffectArray Operation="Subtract" Reference="Abil,WidowMineUnburrow,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="0.500000"/>
@@ -307,7 +309,7 @@
         <EffectArray index="22" Value="1"/>
         <EffectArray index="34" Reference="Weapon,LanceMissileLaunchers,Level" Value="1"/>
         <EffectArray index="35" Reference="Effect,LanceMissileLaunchersDamage,Amount" Value="3"/>
-        <EffectArray index="36" Reference="Effect,CycloneAttackWeaponDamage,Amount" Value="1"/>
+        <EffectArray index="36" Reference="Effect,CycloneAttackWeaponDamage,Amount"/>
         <EffectArray index="37" Operation="Set" Reference="Weapon,LanceMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray index="38" Operation="Add" Reference="Weapon,TyphoonMissilePod,Level" Value="1"/>
         <EffectArray index="39" Operation="Set" Reference="Weapon,TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
@@ -322,7 +324,7 @@
         <EffectArray index="22" Value="1"/>
         <EffectArray index="34" Reference="Weapon,LanceMissileLaunchers,Level" Value="1"/>
         <EffectArray index="35" Reference="Effect,LanceMissileLaunchersDamage,Amount" Value="3"/>
-        <EffectArray index="36" Reference="Effect,CycloneAttackWeaponDamage,Amount" Value="1"/>
+        <EffectArray index="36" Reference="Effect,CycloneAttackWeaponDamage,Amount"/>
         <EffectArray index="37" Operation="Set" Reference="Weapon,LanceMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray index="38" Operation="Add" Reference="Weapon,TyphoonMissilePod,Level" Value="1"/>
         <EffectArray index="39" Operation="Set" Reference="Weapon,TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
@@ -337,7 +339,7 @@
         <EffectArray index="22" Value="1"/>
         <EffectArray index="34" Reference="Weapon,LanceMissileLaunchers,Level" Value="1"/>
         <EffectArray index="35" Reference="Effect,LanceMissileLaunchersDamage,Amount" Value="3"/>
-        <EffectArray index="36" Reference="Effect,CycloneAttackWeaponDamage,Amount" Value="1"/>
+        <EffectArray index="36" Reference="Effect,CycloneAttackWeaponDamage,Amount"/>
         <EffectArray index="37" Operation="Set" Reference="Weapon,LanceMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray index="38" Operation="Add" Reference="Weapon,TyphoonMissilePod,Level" Value="1"/>
         <EffectArray index="39" Operation="Set" Reference="Weapon,TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>

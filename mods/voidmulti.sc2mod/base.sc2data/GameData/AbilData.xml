@@ -967,7 +967,7 @@
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
         </InfoArray>
-        <InfoArray index="Research10" Time="140" Upgrade="BansheeSpeed">
+        <InfoArray index="Research10" Time="110.6" Upgrade="BansheeSpeed">
             <Resource index="Minerals" value="125"/>
             <Resource index="Vespene" value="125"/>
             <Button DefaultButtonFace="BansheeSpeed" Requirements="LearnBansheeSpeed">
@@ -1828,7 +1828,7 @@
         <Cost>
             <Vital index="Energy" value="50"/>
             <Charge Link="Abil/BatteryOvercharge"/>
-            <Cooldown Location="Player" TimeUse="84"/>
+            <Cooldown Location="Player" TimeUse="63"/>
         </Cost>
         <TargetFilters value="CanHaveEnergy;Ally,Neutral,Enemy,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
         <Range value="500"/>
@@ -1899,4 +1899,11 @@
         <CancelableArray index="ApproachResource" value="1"/>
         <CancelableArray index="WaitAtResource" value="1"/>
     </CAbilHarvest>
+    <CAbilMorphPlacement id="OrbitalCommandLand">
+        <InfoArray index="0">
+            <SectionArray index="Stats">
+                <EffectArray index="Finish" value="CommandStructureAutoRally"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorphPlacement>
 </Catalog>
