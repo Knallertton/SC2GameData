@@ -61,8 +61,8 @@
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorCreepSource>
     <CBehaviorBuff id="PsiStorm">
-        <Duration value="0.3808"/>
-        <Period value="0.2854"/>
+        <Duration value="0.6555"/>
+        <Period value="0.56"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="QueenMustBeOnCreep">
         <InfoFlags index="Hidden" value="1"/>
@@ -1193,5 +1193,13 @@
             <ModifyFlags index="OrdersUninterruptible" value="1"/>
         </Modification>
         <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BroodlingAllowAttack">
+        <Duration value="0.5"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReaperKD8Knockback">
+        <Period value="0.125"/>
+        <PeriodicEffect value="ReaperKD8KnockbackRB"/>
     </CBehaviorBuff>
 </Catalog>

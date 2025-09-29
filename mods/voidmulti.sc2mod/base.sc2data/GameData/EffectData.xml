@@ -364,16 +364,17 @@
         <ValidatorArray value="ZealotAttackDamageMaxRange"/>
     </CEffectDamage>
     <CEffectDamage id="PsiStormDamage">
-        <Amount value="5"/>
+        <Amount value="8.75"/>
     </CEffectDamage>
     <CEffectDamage id="PsiStormDamageInitial">
-        <Amount value="5"/>
+        <Amount value="8.75"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="PsiStormPersistent">
-        <PeriodCount value="12"/>
+        <PeriodCount value="14"/>
+        <PeriodicPeriodArray index="0" value="0.56"/>
     </CEffectCreatePersistent>
     <CEffectEnumArea id="PsiStormSearch">
-        <AreaArray index="0" Radius="2.25"/>
+        <AreaArray index="0" Radius="2"/>
     </CEffectEnumArea>
     <CEffectSet id="RavenScramblerDummy">
         <EditorCategories value="Race:Terran"/>
@@ -472,6 +473,7 @@
         <EffectArray value="LockOnTurretStart"/>
         <EffectArray value="LockOnResetCooldownInitial"/>
         <EffectArray value="LockOnDummyWeaponAB"/>
+        <ValidatorArray value="TargetNotInvisibleDummyUnit"/>
     </CEffectSet>
     <CEffectApplyBehavior id="NexusShieldOverchargeAB">
         <EditorCategories value=""/>
@@ -631,8 +633,9 @@
     <CEffectCreatePersistent id="RevelationPersistent">
         <ExpireDelay value="28"/>
     </CEffectCreatePersistent>
-    <CEffectCreateUnit id="ReaperKD8Knockback">
+    <CEffectCreateUnit id="KD8Knockback">
         <ValidatorArray value="IsNotRecallingNexus"/>
+        <ValidatorArray value="IsStrategicWarpOut"/>
     </CEffectCreateUnit>
     <CEffectCreateHealer id="ShieldBatteryRechargeEx5">
         <ValidatorArray value="noMarkers"/>
@@ -703,6 +706,9 @@
         <AttributeBonus index="Armored" value="2"/>
         <Amount value="3"/>
     </CEffectDamage-->
+    <CEffectDamage id="CycloneAttackWeaponDamage">
+        <ValidatorArray value="DetectedORNotCloakedBuried"/>
+    </CEffectDamage>
     <CEffectSet id="FungalGrowthInitialSet">
         <EffectArray index="0" value=""/>
     </CEffectSet>
@@ -2425,11 +2431,6 @@
         <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray index="0" Radius="3.75"/>
     </CEffectEnumArea>
-    <CEffectModifyUnit id="ViperConsumeStructureModifyTarget">
-        <VitalArray index="Life">
-            <Change value="-7.5"/>
-        </VitalArray>
-    </CEffectModifyUnit>
     <CEffectTeleport id="HyperjumpTeleport">
         <TeleportFlags index="TestZone" value="1"/>
     </CEffectTeleport>
@@ -2757,4 +2758,45 @@
         <Player Value="Source"/>
         <Target Value="TargetUnit"/>
     </CEffectIssueOrder>
+    <CEffectEnumMagazine id="BroodlordIterateBroodlingEscort">
+        <WhichUnit Value="Caster"/>
+        <EffectExternal value="BroodlingEnableAttackAB"/>
+    </CEffectEnumMagazine>
+    <CEffectApplyBehavior id="BroodlingEnableAttackAB">
+        <Behavior value="BroodlingAllowAttack"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="BroodlingEscort">
+        <ValidatorArray value="BroodlingAllowedAttack"/>
+    </CEffectSwitch>
+    <CEffectCreatePersistent id="Contaminate">
+        <ValidatorArray index="0" value="ContaminateTargetFilters"/>
+        <ValidatorArray value="noMarkers"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyUnit id="ViperConsumeStructureModifyTarget">
+        <VitalArray index="Life">
+            <Change value="-7.5"/>
+        </VitalArray>
+        <!--5.0.15 data -->
+        <ValidatorArray value="LifeGT2"/>
+        <ValidatorArray value="ConsumePeriodicCheck"/>
+    </CEffectModifyUnit>
+    <CEffectDamage id="ViperConsumeDamage">
+        <Flags index="NoKillCredit" value="1"/>
+        <Amount value="7.5"/>
+    </CEffectDamage>
+    <CEffectSet id="ViperConsumeStructurePeriodicSet">
+        <EffectArray index="0" value="ViperConsumeDamage"/>
+        <ValidatorArray value="LifeGT2"/>
+        <ValidatorArray value="ConsumePeriodicCheck"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="ViperConsumeStructureLaunchMissile">
+        <ValidatorArray value="LifeGT2"/>
+        <ValidatorArray value="ConsumePeriodicCheck"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="ViperConsumeStructureCreatePersistent">
+        <PeriodicValidator value="ConsumePeriodicCheck"/>
+    </CEffectCreatePersistent>
+    <CEffectRemoveBehavior id="ReaperKD8KnockbackRB">
+        <ValidatorArray index="0" value="ReaperKD8KnockbackNotInMotion"/>
+    </CEffectRemoveBehavior>
 </Catalog>

@@ -609,7 +609,7 @@
         <EnergyStart value="75"/>
         <GlossaryWeakArray index="0" value="Thor"/>
         <GlossaryWeakArray index="1" value="Roach"/>
-        <Food value="-3"/>
+        <Attributes index="Light" value="1"/>
     </CUnit>
     <CUnit id="GhostAlternate" parent="Ghost">
         <EffectArray index="Create" value="MorphToGhostNova"/>
@@ -619,11 +619,14 @@
         <GlossaryCategory value=""/>
         <GlossaryWeakArray index="0" value="Marauder"/>
         <GlossaryWeakArray index="1" value="Zergling"/>
+        <Food value="-3"/>
     </CUnit>
     <CUnit id="GhostNova" parent="Ghost">
         <GlossaryCategory value=""/>
         <GlossaryWeakArray index="0" value="Marauder"/>
         <GlossaryWeakArray index="1" value="Zergling"/>
+        <Food value="-3"/>
+        <Attributes index="Light" value="0"/>
     </CUnit>
     <CUnit id="GhostAcademy">
         <CardLayouts index="0">
@@ -1597,6 +1600,7 @@
         <WeaponArray Link="90mmCannonsFake" Turret="SiegeTank"/>
         <LifeStart value="175"/>
         <LifeMax value="175"/>
+        <AlliedPushPriority value="1"/>
     </CUnit>
     <CUnit id="SiegeTankSieged">
         <Collide index="Locust" value="1"/>
@@ -1604,7 +1608,6 @@
         <LifeStart value="175"/>
         <LifeMax value="175"/>
         <GlossaryStrongArray index="1" value="Roach"/>
-        <Attributes index="Hover" value="1"/>
     </CUnit>
     <CUnit id="SpawningPool">
         <Collide index="Locust" value="1"/>
@@ -1916,6 +1919,7 @@
         <CardLayouts index="0">
             <LayoutButtons index="6" Face="ResearchSmartServos" Type="Passive" AbilCmd="" Requirements="HaveSmartServos" Column="2"/>
         </CardLayouts>
+        <AlliedPushPriority value="1"/>
     </CUnit>
     <CUnit id="TwilightCouncil">
         <Collide index="Locust" value="1"/>
@@ -2292,6 +2296,7 @@
         <SubgroupPriority value="52"/>
         <GlossaryStrongArray index="0" value="VikingFighter"/>
         <GlossaryStrongArray index="2" value="Phoenix"/>
+        <AlliedPushPriority value="1"/>
     </CUnit>
     <CUnit id="WidowMineBurrowed">
         <SubgroupPriority value="54"/>

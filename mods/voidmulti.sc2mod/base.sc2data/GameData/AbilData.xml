@@ -843,6 +843,7 @@
         <CursorEffect value="AmorphousArmorcloudSearch"/>
         <AINotifyEffect value="AmorphousArmorcloudCP"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AmorphousArmorcloud" Requirements="UseAmorphousArmorcloud"/>
+        <CastOutroTime value="0.5"/>
     </CAbilEffectTarget>
     <CAbilBuild id="ProtossBuild">
         <InfoArray index="Build16" Unit="ShieldBattery" Time="40">
@@ -850,11 +851,19 @@
         </InfoArray>
         <EffectArray index="Start" value="WorkerVespeneBugOnProbeAB"/>
     </CAbilBuild>
+    <CAbilEffectTarget id="PsiStorm">
+        <Range index="0" value="8"/>
+    </CAbilEffectTarget>
     <CAbilEffectInstant id="PurificationNova">
         <Cost index="0">
             <Cooldown TimeUse="23.8"/>
         </Cost>
     </CAbilEffectInstant>
+    <CAbilEffectTarget id="PurificationNovaTargeted">
+        <Cost index="0">
+            <Cooldown TimeUse="23.8"/>
+        </Cost>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="ReleaseInterceptors">
         <Cost index="0">
             <Cooldown TimeUse="40"/>
@@ -1144,6 +1153,7 @@
         <AutoCastCountMax value="500"/>
     </CAbilMorph>
     <CAbilEffectTarget id="ViperConsumeStructure">
+        <Flags index="BestUnit" value="0"/>
         <Flags index="WaitToSpend" value="1"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="ViperParasiticBombRelay">
@@ -1947,4 +1957,17 @@
             </Button>
         </InfoArray>
     </CAbilBuild>
+    <CAbilEffectInstant id="Stimpack">
+        <Cost index="0">
+            <Cooldown TimeUse="1"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="StimpackMarauder">
+        <Cost index="0">
+            <Cooldown TimeUse="1"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="CausticSpray">
+        <Flags index="BestUnit" value="0"/>
+    </CAbilEffectTarget>
 </Catalog>

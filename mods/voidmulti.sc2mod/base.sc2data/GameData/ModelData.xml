@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorModel id="DefilerMPPlagueTargetModel">
+        <On index="3" Terms="Behavior.AmorphousArmorcloud.On"/>
+        <On index="6" Terms="Behavior.AmorphousArmorcloud.Off"/>
+        <On Terms="ActorCreation; ValidateUnitType IsLurkerBurrowed" Send="SetScale 0.900000"/>
+        <On Terms="ActorCreation; ValidateUnitType IsLurkerUnBurrowed" Send="SetScale 0.800000"/>
+        <AutoScaleFactor value="0.400000"/>
+    </CActorModel>
     <CModel id="CleaningBot">
         <Events>
             <Anim value="Walk,00"/>
@@ -1507,5 +1514,8 @@
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
         <SquibTypeDefault value="Flesh"/>
+    </CModel>
+    <CModel id="LurkerAttackSpikeEx2">
+        <AnimSpeed value="1.750000"/>
     </CModel>
 </Catalog>

@@ -182,6 +182,7 @@
         <AffectedUnitArray value="PylonOvercharged"/>
         <AffectedUnitArray value="ShieldBattery"/>
         <AffectedUnitArray value="ObserverSiegeMode"/>
+        <AffectedUnitArray value="AssimilatorRich"/>
         <EffectArray Reference="Unit,PylonOvercharged,ShieldArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,PylonOvercharged,ShieldArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ShieldBattery,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
@@ -189,13 +190,14 @@
         <EffectArray Reference="Unit,ShieldBattery,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,ObserverSiegeMode,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,ObserverSiegeMode,ShieldArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,AssimilatorRich,ShieldArmor" Value="1"/>
-        <EffectArray Reference="Unit,AssimilatorRich,ShieldArmorLevel" Value="1"/>
         <!--EffectArray Operation="Set" Reference="Actor,PylonOvercharged,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/-->
+        <!--5.0.15 data -->
+        <EffectArray Operation="Set" Reference="Actor,AssimilatorRich,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
     </CUpgrade>
     <CUpgrade id="ProtossShieldsLevel2">
         <AffectedUnitArray value="PylonOvercharged"/>
         <AffectedUnitArray value="ObserverSiegeMode"/>
+        <AffectedUnitArray value="AssimilatorRich"/>
         <EffectArray Reference="Unit,PylonOvercharged,ShieldArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,PylonOvercharged,ShieldArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ShieldBattery,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
@@ -203,14 +205,15 @@
         <EffectArray Reference="Unit,ShieldBattery,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,ObserverSiegeMode,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,ObserverSiegeMode,ShieldArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,AssimilatorRich,ShieldArmor" Value="1"/>
-        <EffectArray Reference="Unit,AssimilatorRich,ShieldArmorLevel" Value="1"/>
+        <!--5.0.15 data -->
+        <EffectArray Operation="Set" Reference="Actor,AssimilatorRich,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <!--EffectArray Operation="Set" Reference="Actor,PylonOvercharged,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/-->
         <ScoreAmount value="400"/>
     </CUpgrade>
     <CUpgrade id="ProtossShieldsLevel3">
         <AffectedUnitArray value="PylonOvercharged"/>
         <AffectedUnitArray value="ObserverSiegeMode"/>
+        <AffectedUnitArray value="AssimilatorRich"/>
         <EffectArray Reference="Unit,PylonOvercharged,ShieldArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,PylonOvercharged,ShieldArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ShieldBattery,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
@@ -218,8 +221,8 @@
         <EffectArray Reference="Unit,ShieldBattery,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,ObserverSiegeMode,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,ObserverSiegeMode,ShieldArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,AssimilatorRich,ShieldArmor" Value="1"/>
-        <EffectArray Reference="Unit,AssimilatorRich,ShieldArmorLevel" Value="1"/>
+        <!--5.0.15 data -->
+        <EffectArray Operation="Set" Reference="Actor,AssimilatorRich,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <!--EffectArray Operation="Set" Reference="Actor,PylonOvercharged,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/-->
         <ScoreAmount value="500"/>
     </CUpgrade>
@@ -976,5 +979,10 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="Race:Zerg,UpgradeType:SpellResearch"/>
         <AffectedUnitArray value="Hydralisk"/>
+    </CUpgrade>
+    <CUpgrade id="HiSecAutoTracking">
+        <EffectArray Reference="Weapon,TwinIbiksCannon,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AutoTurret,Level" Value="1"/>
+        <EffectArray Reference="Weapon,LongboltMissile,Level" Value="1"/>
     </CUpgrade>
 </Catalog>
