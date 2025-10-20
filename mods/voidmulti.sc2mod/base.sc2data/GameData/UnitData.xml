@@ -621,13 +621,11 @@
         <GlossaryCategory value=""/>
         <GlossaryWeakArray index="0" value="Marauder"/>
         <GlossaryWeakArray index="1" value="Zergling"/>
-        <Food value="2"/>
     </CUnit>
     <CUnit id="GhostNova" parent="Ghost">
         <GlossaryCategory value=""/>
         <GlossaryWeakArray index="0" value="Marauder"/>
         <GlossaryWeakArray index="1" value="Zergling"/>
-        <Food value="2"/>
     </CUnit>
     <CUnit id="GhostAcademy">
         <CardLayouts index="0">
