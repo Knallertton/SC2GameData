@@ -189,6 +189,8 @@
                 <Anchor side="Left" relative="$parent/OptionsButton" pos="Min" offset="0"/>
                 <UseAnchors val="true"/>
                 <ShowMapInfo val="true"/>
+                <ShowModerateMaps val="true"/>
+                <ShowModerateMods val="false"/>
                 <MapHandle val="{$parent/$parent/@MapHandle}"/>
                 <ModHandle val="{$parent/$parent/@ModHandle}"/>
             </Frame>

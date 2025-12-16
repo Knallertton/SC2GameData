@@ -606,6 +606,8 @@
             <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
             <ShowMapInfo val="true"/>
+            <ShowModerateMaps val="false"/>
+            <ShowModerateMods val="true"/>
             <ModHandle val="{$parent/@SelectedMapHandle}"/>
         </Frame>
 

@@ -233,6 +233,8 @@
         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
         <ShowMapInfo val="true"/>
         <ShowCreateOffline val="false"/>
+        <ShowModerateMaps val="false"/>
+        <ShowModerateMods val="false"/>
         <MapHandle val="{$parent/@SelectedMapHandle}"/>
       </Frame>
 

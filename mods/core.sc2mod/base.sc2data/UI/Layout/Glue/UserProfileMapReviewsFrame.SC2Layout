@@ -218,6 +218,8 @@
             <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
             <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
             <ShowMapInfo val="true"/>
+            <ShowModerateMaps val="true"/>
+            <ShowModerateMods val="false"/>
             <MapHandle val="{$parent/@MapHandle}"/>
         </Frame>
 

@@ -394,6 +394,8 @@
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
             <ShowMapInfo val="true"/>
             <ShowCreateOffline val="true"/>
+            <ShowModerateMaps val="true"/>
+            <ShowModerateMods val="false"/>
             <MapHandle val="{$parent/@SelectedMapHandle}"/>
             <ModHandle val="{$parent/@SelectedModHandle}"/>
             <ExpansionTag val="{$parent/@ExpansionTag}"/>

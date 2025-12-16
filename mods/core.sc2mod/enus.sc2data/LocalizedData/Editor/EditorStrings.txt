@@ -1220,6 +1220,7 @@ EDSTR_BNET_PUBLISH_ERROR_NAMETOOSHORT=The published name 'NAME' is too short (CO
 EDSTR_BNET_PUBLISH_ERROR_NAMEBEGINSPACE=The published name 'NAME' begins with whitespace characters [LOCALE]
 EDSTR_BNET_PUBLISH_ERROR_NAMEENDSPACE=The published name 'NAME' ends with whitespace characters [LOCALE]
 EDSTR_BNET_PUBLISH_ERROR_NAMECONSECUTIVESPACE=The published name 'NAME' contains consecutive whitespace characters [LOCALE]
+EDSTR_BNET_PUBLISH_ERROR_PROFANITY=The content in field [FIELD] contains profanity
 EDSTR_BNET_PUBLISH_ERROR_ARCADEICONREQUIRED=Public release has no icon set (see Map/Mod > Battle.net Info)
 EDSTR_BNET_PUBLISH_ERROR_TIMEOUT=Timed out waiting for: ACTIVITY
 EDSTR_BNET_PUBLISH_ERROR_TIMEOUT_GENERIC=Timed out waiting for response from Blizzard services

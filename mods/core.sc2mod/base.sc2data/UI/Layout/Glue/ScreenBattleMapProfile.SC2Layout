@@ -325,6 +325,8 @@
             <Anchor side="Top" relative="$parent/OptionsButton" pos="Max" offset="0"/>
             <Anchor side="Left" relative="$parent/OptionsButton" pos="Min" offset="0"/>
             <UseAnchors val="true"/>
+            <ShowModerateMaps val="true"/>
+            <ShowModerateMods val="false"/>
             <MapHandle val="{$parent/@MapHandle}"/>
         </Frame>
 
