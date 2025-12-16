@@ -497,8 +497,6 @@
         <GameContentArray value="SkinPack,HatcheryRCZ"/>
         <GameContentArray value="SkinPack,HydraliskDenRCZ"/>
         <GameContentArray value="SkinPack,InfestationPitRCZ"/>
-        <GameContentArray value="Bundle,CNBundle1"/>
-		<GameContentArray value="Bundle,CNBundle2"/>
         <GameContentArray value="SkinPack,LurkerDenRCZ"/>
         <GameContentArray value="SkinPack,NydusNetworkRCZ"/>
         <GameContentArray value="SkinPack,RoachWarrenRCZ"/>
@@ -566,6 +564,8 @@
         <GameContentArray value="Bundle,WarChestSeason6ProtossSkinsBundle"/>
         <GameContentArray value="Bundle,PremiumMapARKStar"/>
         <GameContentArray value="Bundle,PremiumMapDirectStrike"/>
+		<GameContentArray value="Bundle,CNBundle1"/>
+		<GameContentArray value="Bundle,CNBundle2"/>
         <GameContentArray value="ConsoleSkin,ConsoleProtoss_Default"/>
         <GameContentArray value="ConsoleSkin,ConsoleTerran_Default"/>
         <GameContentArray value="ConsoleSkin,ConsoleZerg_Default"/>

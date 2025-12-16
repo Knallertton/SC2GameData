@@ -98,8 +98,6 @@
         <PurchaseProductIdArray value="32210"/>
         <PurchaseProductIdArray value="32192"/>
         <PurchaseProductIdArray value="32212"/>
-        <PurchaseProductIdArray value="2002234"/>
-        <PurchaseProductIdArray value="1981417"/>
         <ScreenshotImage1 value="Assets\Textures\SC2_UI_Collection_Featured_Bundle_Screenshot_HeartoftheSwarm_A.dds"/>
         <ScreenshotImage2 value="Assets\Textures\SC2_UI_Collection_Featured_Bundle_Screenshot_HeartoftheSwarm_B.dds"/>
         <ScreenshotImage3 value="Assets\Textures\SC2_UI_Collection_Featured_Bundle_Screenshot_HeartoftheSwarm_C.dds"/>
@@ -200,8 +198,6 @@
         <PurchaseProductIdArray value="32191"/>
         <PurchaseProductIdArray value="32192"/>
         <PurchaseProductIdArray value="32212"/>
-        <PurchaseProductIdArray value="2002234"/>
-        <PurchaseProductIdArray value="1981417"/>
         <ScreenshotImage1 value="Assets\Textures\SC2_UI_Collection_Featured_Bundle_Screenshot_LegacyoftheVoid_A.dds"/>
         <ScreenshotImage2 value="Assets\Textures\SC2_UI_Collection_Featured_Bundle_Screenshot_LegacyoftheVoid_B.dds"/>
         <ScreenshotImage3 value="Assets\Textures\SC2_UI_Collection_Featured_Bundle_Screenshot_LegacyoftheVoid_C.dds"/>
@@ -298,8 +294,6 @@
         <PurchaseProductIdArray value="32229"/>
         <PurchaseProductIdArray value="32192"/>
         <PurchaseProductIdArray value="32212"/>
-        <PurchaseProductIdArray value="2002234"/>
-        <PurchaseProductIdArray value="1981417"/>
         <ShortName value="UI/NovaCampaign01ShortName"/>
         <StoreTypeName value="UI/StoreTypeName/MissionPack"/>
         <ScreenshotImage1 value="Assets\Textures\SC2_UI_Collection_Featured_Bundle_Screenshot_NovaCovertOps_MissionPack1_A.dds"/>

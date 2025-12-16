@@ -27,7 +27,6 @@ texDecl2D(p_sDisplacementSrc);
 HALF2       p_vStrength2D;
 
 //--------------------------------------------------------------------------------------------------
-#pragma optimize("", off)
 HALF4 Displace( in VertexTransport vertOut, inout HALF3 vDeferredNormal, inout HALF3 cDeferredDiffuse, inout HALF3 cDeferredSpecular, inout HALF cDeferredAO, inout HALF cDeferredSpecularPower, inout HALF cDeferredGlossiness ) {
     float3x2    mTriPlanarUVs[c_maxNumLayers];
 
