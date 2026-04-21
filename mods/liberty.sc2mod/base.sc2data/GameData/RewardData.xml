@@ -935,11 +935,23 @@
         <Category File="TempestSkin" Tag="PTem"/>
         <Race value="Prot"/>
     </CRewardModel>
+    <CRewardPortrait id="2026MatcherinoContributor" parent="PORTRAITDEFAULT">
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+        <IconFile value="$Portraits17"/>
+        <IconSlot value="10"/>
+    </CRewardPortrait>
     <CRewardPortrait id="2026allstarherO" parent="PORTRAITDEFAULT">
         <Flags index="Cloaked" value="1"/>
         <Flags index="Hidden" value="1"/>
         <IconFile value="$Portraits17"/>
         <IconSlot value="7"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="2026MatcherinoWinner" parent="PORTRAITDEFAULT">
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+        <IconFile value="$Portraits17"/>
+        <IconSlot value="11"/>
     </CRewardPortrait>
     <CRewardIcon id="FeatOfStrength_BlizzConline_2021" parent="ICONDEFAULT">
         <IconFile value="$Achievements16"/>
