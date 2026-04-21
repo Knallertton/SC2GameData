@@ -421,7 +421,13 @@
                     <When type="Property" frame="$parent" IsReplayLobby="true"/>
                     <Action type="SetProperty" Visible="false"/>
                 </State>
-                
+
+                <State name="ModModeration">
+                    <When type="Property" frame="$parent/ModFrame" IsMapInModeration="True"/>
+                    <Action type="SetProperty" Enabled="false"/>
+                    <Action type="SetProperty" Tooltip="@UI/ScreenBattleLobby/UnderReview"/>
+                </State>
+
                 <State name="Moderation">
                     <When type="Property" frame="$parent/MapFrame" IsMapInModeration="True"/>
                     <Action type="SetProperty" Enabled="false"/>

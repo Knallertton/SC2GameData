@@ -935,6 +935,12 @@
         <Category File="TempestSkin" Tag="PTem"/>
         <Race value="Prot"/>
     </CRewardModel>
+    <CRewardPortrait id="2026allstarherO" parent="PORTRAITDEFAULT">
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+        <IconFile value="$Portraits17"/>
+        <IconSlot value="7"/>
+    </CRewardPortrait>
     <CRewardIcon id="FeatOfStrength_BlizzConline_2021" parent="ICONDEFAULT">
         <IconFile value="$Achievements16"/>
         <IconSlot value="53"/>

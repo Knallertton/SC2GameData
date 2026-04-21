@@ -2092,6 +2092,7 @@ UI/BattleNetErrorDialog/Error_AuthUnknown=There was an unknown error loggin in.
 UI/BattleNetErrorDialog/Error_GameServer=A problem occurred while connecting to the game. Please try again later.
 UI/BattleNetErrorDialog/Error_NoParams=There was an internal error logging in. [No Parameters]
 UI/BattleNetErrorDialog/Error_PreLobby=Failed to stream necessary map data.
+UI/BattleNetErrorDialog/Error_InvalidMap=Invalid map.
 UI/BattleNetErrorDialog/Error_ServiceLost=You were disconnected from Blizzard services.
 UI/BattleNetErrorDialogTitle=Error
 UI/BattleNetErrorDialogTitleNGDPPatchFailure=Version Mismatch
