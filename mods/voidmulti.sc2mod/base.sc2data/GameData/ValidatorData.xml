@@ -40,6 +40,18 @@
         <CombineArray value="CasterHas10Energy"/>
         <CombineArray value="CasterHasBatteryOverchargeBehavior"/>
     </CValidatorCombine>
+    <CValidatorCombine id="GatewayMorphingCombine">
+        <CombineArray value="GatewayMorphingFree"/>
+        <CombineArray value="GatewayMorphing"/>
+    </CValidatorCombine>
+    <CValidatorUnitOrderQueue id="GatewayMorphingFree">
+        <AbilLink value="MorphBuildingGatewayWarpGateFree"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="MoveToBuildActiveFollowTargetUnnamed">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="TerranBuild"/>
+        <Target Value="SourceUnit"/>
+    </CValidatorUnitOrderQueue>
     <CValidatorLocationEnumArea id="NexusBatteryOvercharge8RangePlacementVisual">
         <ResultFailed value="TargetIsOutOfRange,Error/BatteryMustBeNearNexus"/>
         <AreaArray>
@@ -1076,4 +1088,119 @@
         <Compare value="GT"/>
         <Value value="7.5"/>
     </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="IsActiveBuilderSCV">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="IsActiveBuilderSCV"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="IsNotActiveBuilderSCV">
+        <Behavior value="IsActiveBuilderSCV"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="ConstructingSCVIsActiveTargetCombine">
+        <CombineArray value="ConstructingSCVIsActiveFollowTarget"/>
+        <CombineArray value="ConstructingSCVIsActiveAttackTarget"/>
+    </CValidatorCombine>
+    <CValidatorUnitOrderQueue id="ConstructingSCVIsActiveAttackTarget">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="attack"/>
+        <Target Value="CasterUnit"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="ConstructingSCVIsActiveFollowTarget">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="move"/>
+        <Target Value="CasterUnit"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="ConstructingSCVNotAttackOrderTargetBetter">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="attack"/>
+        <Find value="0"/>
+        <Queued value="1"/>
+        <Target Value="CasterUnit"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="ConstructingSCVNotFollowOrderTargetBetter">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="move"/>
+        <Find value="0"/>
+        <Queued value="1"/>
+        <Target Value="CasterUnit"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="VespeneMovetoBuildCombine">
+        <CombineArray value="VespeneMovetoBuildTargetofIdle"/>
+        <CombineArray value="VespeneMovetoGeyserIsTarget"/>
+    </CValidatorCombine>
+    <CValidatorUnitOrderQueue id="VespeneMovetoBuildTargetofIdle">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="WorkerStopIdleAbilityVespene"/>
+        <Target Value="SourceUnit"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="VespeneMovetoGeyserIsTarget">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="move"/>
+        <Target Value="SourceUnit"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="WarpPrismDecelerationQoL">
+        <Type value="And"/>
+        <CombineArray value="WarpPrismLoadupIsCurrentOrder"/>
+        <CombineArray value="WarpPrismNotRecentlyMorphed"/>
+        <CombineArray value="WarpPrismLoadupTargetRange"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="WarpPrismNotRecentlyMorphed">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="WarpPrismLoadupDecFixMorphCheck"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareOrderTargetRange id="WarpPrismLoadupTargetRange">
+        <WhichUnit Value="Caster"/>
+        <OtherUnit Value="Target"/>
+        <Compare value="LE"/>
+        <Value value="8"/>
+        <AbilLink value="WarpPrismTransport"/>
+    </CValidatorUnitCompareOrderTargetRange>
+    <CValidatorUnitOrderQueue id="WarpPrismLoadupIsCurrentOrder">
+        <AbilLink value="WarpPrismTransport"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="ProtossBuildingBurnDownFireBlue">
+        <Type value="And"/>
+        <CombineArray value="ShieldLTOneEighth"/>
+        <CombineArray value="LifeLTOneThird"/>
+        <CombineArray value="ProtossBurnDownValid"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ProtossBuildingBurnDownFireSmoke">
+        <Type value="And"/>
+        <CombineArray value="ShieldLQuarter"/>
+        <CombineArray value="LifeLTTwoThird"/>
+        <CombineArray value="ProtossBurnDownValid"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareVital id="ShieldLTOneEighth">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.125"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorCombine id="QueenTargetFiltersInject">
+        <CombineArray value="QueenRangeCheckLE25Inject"/>
+        <CombineArray value="NoQueenNearTargetInject"/>
+        <ResultFailed value="TargetIsOutOfRange"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="QueenRangeCheckLE25Inject">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="25"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationEnumArea id="NoQueenNearTargetInject" unitLink="Queen">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <WhichLocation Value="TargetUnit"/>
+        <AreaArray Count="0" Radius="12" Validator="IsQueen"/>
+        <Compare value="Eq"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <LaunchLocation Value="TargetUnit"/>
+        <SearchFilters value="Visible;Ally,Neutral,Enemy,Worker,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <CachedSearch value="QueenInject"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareAttackPriority id="ThreatensMutalisk" parent="ThreatensUnit" unitLink="Mutalisk"/>
+    <CValidatorUnitCompareBehaviorCount id="NotInPsiStorm">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PsiStorm"/>
+    </CValidatorUnitCompareBehaviorCount>
 </Catalog>
