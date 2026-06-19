@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CRequirementConst id="10"/>
-    <CRequirementAnd id="AndCountBehaviorHasMorphedBeforeCompleteOnlyAtUnitNotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnit">
+    <CRequirementAnd id="AndCountBehaviorHasMorphedBeforeCompleteOnlyAtUnitNotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnitNotCountBehaviorGatewayTrainingStateCompleteOnlyAtUnit">
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountBehaviorHasMorphedBeforeCompleteOnlyAtUnit"/>
         <OperandArray value="NotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnit"/>
+        <OperandArray value="NotCountBehaviorGatewayTrainingStateCompleteOnlyAtUnit"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndCountBehaviorNexusShieldOverchargeCompleteOnlyAtUnit1">
         <OperandArray value="CountBehaviorNexusShieldOverchargeCompleteOnlyAtUnit"/>
         <OperandArray value="1"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndCountUpgradeWarpGateResearchCompleteOnly1365400877TechTreeCheatNotCountBehaviorHasMorphedBeforeCompleteOnlyAtUnit">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountUpgradeWarpGateResearchCompleteOnly1365400877TechTreeCheat"/>
         <OperandArray value="NotCountBehaviorHasMorphedBeforeCompleteOnlyAtUnit"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndNotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnitNotCountBehaviorHasMorphedBeforeCompleteOnlyAtUnit">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="NotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnit"/>
         <OperandArray value="NotCountBehaviorHasMorphedBeforeCompleteOnlyAtUnit"/>
     </CRequirementAnd>
@@ -32,9 +31,13 @@
         <OperandArray value="NotCountUnitStarportReactorQueuedOnlyAtUnit"/>
         <OperandArray value="NotCountUnitStarportTechLabQueuedOnlyAtUnit"/>
     </CRequirementAnd>
-    <CRequirementCountBehavior id="CountBehaviorHasMorphedBeforeCompleteOnlyAtUnit">
+    <CRequirementCountBehavior id="CountBehaviorGatewayTrainingStateCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="GatewayTrainingState" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHasMorphedBeforeCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
         <Count Link="HasMorphedBefore" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorImmortalBarrierSupressedCompleteOnlyAtUnit">
@@ -328,15 +331,17 @@
         <OperandArray index="0" value="CountUnitInterceptorQueuedOrBetterAtUnit"/>
         <OperandArray index="1" value="10"/>
     </CRequirementLT>
-    <CRequirementNot id="NotCountBehaviorHasMorphedBeforeCompleteOnlyAtUnit">
+    <CRequirementNot id="NotCountBehaviorGatewayTrainingStateCompleteOnlyAtUnit">
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountBehaviorGatewayTrainingStateCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorHasMorphedBeforeCompleteOnlyAtUnit">
         <OperandArray index="0" value="CountBehaviorHasMorphedBeforeCompleteOnlyAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountBehaviorImmortalBarrierSupressedCompleteOnlyAtUnit">
         <OperandArray index="0" value="CountBehaviorImmortalBarrierSupressedCompleteOnlyAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnit">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountBehaviorMorphingintoWarpGateCompleteOnlyAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountBehaviorNexusShieldOverchargeCompleteOnlyAtUnit">

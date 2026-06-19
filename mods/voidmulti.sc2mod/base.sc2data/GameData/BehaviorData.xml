@@ -52,11 +52,22 @@
         <InfoIcon value="Assets\Textures\btn-status-detector.dds"/>
         <Modification Detect="15"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="GatewayTrainingState">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="GatewayIsTraining"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="HasMorphedBefore">
         <BehaviorFlags index="Permanent" value="1"/>
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <BuffFlags index="Countdown" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="WarpgateDemorphing">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="WarpgateDemorphing"/>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="NeuralParasiteBlockBurrow">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -653,12 +664,12 @@
         <PowerLink value="FastEnablerPowerSource"/>
     </CBehaviorPowerSource>
     <CBehaviorBuff id="MorphingintoWarpGate">
-        <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <DisableValidatorArray value="GatewayMorphingCombine"/>
         <Modification>
             <AbilLinkDisableArray value="Rally"/>
         </Modification>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="DisruptorAnimationController">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -1005,15 +1016,6 @@
         </Modification>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="MorphingintoWarpGateBirth">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Duration value="10"/>
-        <Modification>
-            <AbilClassDisableArray index="CAbilMorph" value="1"/>
-            <AbilClassDisableArray index="CAbilWarpTrain" value="1"/>
-        </Modification>
-    </CBehaviorBuff>
     <CBehaviorBuff id="LockOnDummyWeapon">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="LockOnTargetNotDeadNew"/>
@@ -1333,7 +1335,7 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <Duration value="2"/>
-        <Modification DecelerationMultiplier="2.25"/>
+        <Modification DecelerationMultiplier="2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hallucination">
         <InitialEffect value="CopyOrdersCaster"/>
@@ -1381,8 +1383,14 @@
         <Offset index="21" value="0,0"/>
         <Offset index="22" value="0.8,0.25"/>
         <Offset index="23" value="-0.8,0.25"/>
+        <InfoArray index="0" Delay="12.6"/>
     </CBehaviorSpawn>
     <CBehaviorCreepSource id="makeCreep8x6">
         <Period value="0.5"/>
     </CBehaviorCreepSource>
+    <CBehaviorBuff id="MuleRepairAutocastCheck">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="4.07"/>
+        <ExpireEffect value="MuleAutocastEnable"/>
+    </CBehaviorBuff>
 </Catalog>

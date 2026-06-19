@@ -174,7 +174,7 @@
     <CRequirement id="UseWarpGateHideFree">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Use" Link="CountUpgradeWarpGateResearchCompleteOnly1365400877TechTreeCheat"/>
-        <NodeArray index="Show" Link="AndCountBehaviorHasMorphedBeforeCompleteOnlyAtUnitNotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="AndCountBehaviorHasMorphedBeforeCompleteOnlyAtUnitNotCountBehaviorMorphingintoWarpGateCompleteOnlyAtUnitNotCountBehaviorGatewayTrainingStateCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="UseWarpgateNotMorphedBefore">
         <NodeArray index="Use" Link="AndCountUpgradeWarpGateResearchCompleteOnly1365400877TechTreeCheatNotCountBehaviorHasMorphedBeforeCompleteOnlyAtUnit"/>

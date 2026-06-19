@@ -472,8 +472,8 @@
         <EditorCategories value="Race:Protoss"/>
         <Options index="Hidden" value="1"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <MinScanRange value="12.5"/>
-        <Range value="12"/>
+        <MinScanRange value="12"/>
+        <Range value="11.35"/>
         <Arc value="360"/>
         <Period value="1"/>
         <Effect value="FakeWeaponDummyDamage"/>

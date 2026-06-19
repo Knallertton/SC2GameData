@@ -88,9 +88,6 @@
         <On Terms="TimerExpired; TimerName MorphSplat" Send="Destroy"/>
         <Inherits index="Visibility" value="0"/>
     </CActorSplat>
-    <CActorSiteOpLocalOffset id="SOpWarpgateResearchOffsetUnnamed">
-        <LocalOffset value="-0.050000,0.000000,1.400000"/>
-    </CActorSiteOpLocalOffset>
     <CActorRange id="SensorTowerRadar">
         <Range value="22.000000"/>
     </CActorRange>
@@ -199,7 +196,6 @@
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="Signal.*.HidePlacement" Send="SetVisibility"/>
         <On Terms="Signal.*.ShowPlacement" Send="SetVisibility 1"/>
-        <On Terms="ActorCreation" Send="Create BatteryOverchargeRange"/>
         <HostSiteOps Ops="SOpTipabilityFloorScope"/>
     </CActorModel>
     <CActorSound id="Nexus_BatteryOverchargeCastSound" parent="SoundOneShot">
@@ -288,6 +284,10 @@
     <CActorUnit id="TemplarArchive">
         <Macros index="5" value="QueueAnimSpeed135"/>
     </CActorUnit>
+    <CActorUnit id="TwilightCouncil">
+        <On Terms="Abil.que5.Start" Send="Create TwilightCouncilResearchBeam"/>
+        <On Terms="Abil.que5.Stop" Target="TwilightCouncilResearchBeam" Send="Destroy"/>
+    </CActorUnit>
     <CActorRange id="UnpoweredVisualLow">
         <IconScale value="0.004000,0.003000"/>
         <IconArcLength value="0.400000"/>
@@ -296,15 +296,6 @@
         <On Terms="AbilMorph.MorphBackToGateway.Cancel" Send="Destroy"/>
         <On Terms="AbilMorph.MorphBackToGateway.Finish" Send="SoundSetMuted 1"/>
     </CActorSound>
-    <CActorModel id="WarpgateResearchBeam" parent="ModelAnimationStyleContinuous">
-        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentForceLooping 0.350000 AsTimeScale"/>
-        <On Terms="ActorCreation" Send="TimerSet 2.500000 BeamDelay"/>
-        <On Terms="TimerExpired; TimerName BeamDelay" Send="AnimSetTimeScale BSD 5.500000"/>
-        <On Terms="Abil.GatewayResearch.Stop" Send="TimerKill BeamDelay"/>
-        <On Terms="Abil.GatewayResearch.Stop" Send="AnimBracketStop BSD 0 0.350000 AsTimeScale"/>
-        <HostSiteOps Ops="SOpAttachOrigin SOpWarpgateResearchOffsetUnnamed"/>
-        <Host Subject="Gateway"/>
-    </CActorModel>
     <CActorSplat id="UltraliskBurrowedSplat">
         <Scale value="0.880000"/>
     </CActorSplat>
@@ -2727,7 +2718,7 @@
         <Scale value="0.600000"/>
     </CActorModel>
     <CActorProgress id="ProtossWarpIn">
-        <On index="5" Terms="ActorCreation" Send="$Birth DontResetOnUnhide -1.000000 -1.000000 4.200000 AsDuration"/>
+        <On index="5" Terms="ActorCreation" Send="$Birth DontResetOnUnhide -1.000000 -1.000000 5.600000 AsDuration"/>
         <On index="6" Terms="ActorCreation" Send="Create ProtossFastWarpinMarker"/>
     </CActorProgress>
     <CActorSimple id="CombatVisibilityClearer">
@@ -2738,12 +2729,8 @@
     </CActorSimple>
     <CActorUnit id="Baneling">
         <On index="84" Terms="WeaponStart.VolatileBurstBuilding.AttackStart" Send="StatusSet DeathSuicide 1"/>
-        <On index="85" Terms="UnitMovementUpdate.*.Walk; AnimPlaying Birth" Send="AnimClear Birth"/>
-        <On index="86" Terms="UnitBirth.Baneling" Send="TerrainSquibActivateGroup RippleStandard"/>
-        <On index="87" Terms="AbilMorph.*.Finish; MorphTo Baneling; MorphFrom BanelingBurrowed"/>
-        <On index="88" Terms="AbilMorph.*.Finish; MorphTo BanelingBurrowed; MorphFrom Baneling" Send="TerrainSquibDeactivate"/>
-        <On index="89" Terms="UnitHeightUpdate.*.Land" Send="Create Baneling_Land"/>
-        <On index="90" Terms="UnitDeathCustomize; IsStatus DeathSuicide 0" Send="Create BanelingDeathNormalSound"/>
+        <On Terms="UnitDeathCustomize; IsStatus DeathSuicide 0" Send="Create BanelingDeathNormalSound"/>
+        <On Terms="Signal.*.BanelingSplashHit; IsStatus DeathSuicide 0" Send="Create BanelingDeathSuicideSound"/>
     </CActorUnit>
     <CActorUnit id="SporeCrawler">
         <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Unburrow"/>
@@ -3071,24 +3058,6 @@
     <CActorAction id="GhostEMPAttack">
         <ShieldFlashType value="Full"/>
     </CActorAction>
-    <CActorAction id="BanelingAttack">
-        <On index="0" Terms="Effect.BanelingVolatileBurstSearch.Start"/>
-        <On index="1" Terms="Effect.BanelingSuicideTargetSwitch.Start"/>
-        <On index="2" Terms="Effect.BanelingSuicideTargetSwitch.Stop"/>
-        <On index="3" Terms="Effect.BanelingVolatileBurstSearch.Stop"/>
-    </CActorAction>
-    <CActorAction id="BanelingAttack2">
-        <On index="0" removed="1"/>
-        <On index="1" removed="1"/>
-        <On index="2" removed="1"/>
-        <On index="3" removed="1"/>
-    </CActorAction>
-    <CActorForceSphere id="BanelingAttackForce">
-        <On index="0" Terms="Effect.BanelingVolatileBurstSearch.Start; At Caster"/>
-    </CActorForceSphere>
-    <CActorSound id="BanelingDeathSuicideSound">
-        <On Terms="Effect.BanelingVolatileBurstSearch.Start; At Caster" Send="Create"/>
-    </CActorSound>
     <CActorEventMacro id="ZergBurrowMobileTransientAnimMacro" parent="ZergBurrowMobileAnimMacro">
         <On index="3" Terms="Behavior.BurrowUpTransientStun.Off"/>
         <On index="4" Terms="Behavior.BurrowUpTransientStun.Off"/>
@@ -3427,12 +3396,13 @@
         <On Terms="AbilCooldown.PurificationNovaTargeted.Regen" Send="Create"/>
         <On Terms="SelectionLocalUpdate.*.Start" Send="SetVisibility 1"/>
         <On Terms="SelectionLocalUpdate.*.Stop" Send="SetVisibility"/>
+        <Range value="11.900000"/>
     </CActorRange>
     <CActorRange id="DisruptorPurificationNovaTargettedRangeOthers">
         <Filter index="Self" value="1"/>
         <On Terms="SelectionLocalUpdate.Disruptor.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.Disruptor.Stop" Send="Destroy"/>
-        <Range value="12.000000"/>
+        <Range value="11.900000"/>
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
     <CActorUnit id="HellionTank">
@@ -3502,13 +3472,10 @@
     <CActorSiteOpLocalOffset id="SOpArmoryResearchOffset">
         <LocalOffset value="-0.210000,-0.250000,0.900000"/>
     </CActorSiteOpLocalOffset>
-    <CActorUnit id="TwilightCouncil">
-        <On Terms="Abil.que5.Start" Send="Create TwilightCouncilResearchBeam"/>
-        <On Terms="Abil.que5.Stop" Target="TwilightCouncilResearchBeam" Send="Destroy"/>
-    </CActorUnit>
     <CActorModel id="TwilightCouncilResearchBeam" parent="ModelAnimationStyleContinuous">
         <On index="0" Terms="ActorCreation" Send="AnimBracketStart AttackCover Birth Birth Death ContentForceLooping 3.000000 AsTimeScale"/>
         <HostSiteOps Ops="SOpAttachOrigin SOpMoveUpBy1"/>
+        <Host Subject="TwilightCouncil"/>
     </CActorModel>
     <CActorModel id="BlindingCloudStructureModelAttachmentNexus">
         <On index="3" removed="1"/>
@@ -3545,4 +3512,35 @@
         <On index="2" removed="1"/>
         <Sound value="XelnagaShrineAmbience"/>
     </CActorSound>
+    <CActorAction id="BanelingAttackDirect" parent="GenericAttack" effectAttack="VolatileBurstFriendlyUnitDamage">
+        <On Terms="Effect.VolatileBurstDirectFallbackEnemyNeutralUnit.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.VolatileBurstDirectFallbackEnemyNeutralUnit.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.VolatileBurstDirectFallbackEnemyNeutralBuilding.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.VolatileBurstDirectFallbackEnemyNeutralBuilding.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.VolatileBurstFriendlyBuildingDamage.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.VolatileBurstFriendlyBuildingDamage.Start; At Caster" Send="Create"/>
+    </CActorAction>
+    <CActorSound id="BanelingDeathSuicideSound">
+        <Terms value="Cap 1"/>
+    </CActorSound>
+    <CActorSimple id="BanelingAttackSplashHitSound">
+        <Supporter Subject="_Unit" Scope="Caster"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="Effect.VolatileBurst.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.SplashDamage.Start; FromEffectTreeDescendant; At Caster" Target="::Supporter" Send="Signal BanelingSplashHit"/>
+        <On Terms="Effect.SplashDamage.Start; FromEffectTreeDescendant; At Caster" Send="Destroy"/>
+        <On Terms="Effect.VolatileBurst.Stop; At Caster" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSplat id="VespeneGeyserSplat">
+        <On index="2" Terms="UnitBirth.VespeneGeyser"/>
+        <On index="3" Terms="UnitBirth.RichVespeneGeyser"/>
+        <On index="4" Terms="ActorCreation; Option Shader Ultra" Send="SetVisibility"/>
+        <On index="5" Terms="ActorCreation; Option Shader Extreme" Send="SetVisibility"/>
+        <On index="6" Terms="OptionsChange; Option Shader Low" Send="SetVisibility 1"/>
+        <On index="7" Terms="OptionsChange; Option Shader Medium" Send="SetVisibility 1"/>
+        <On Terms="OptionsChange; Option Shader High" Send="SetVisibility 1"/>
+        <On Terms="OptionsChange; Option Shader Ultra" Send="SetVisibility"/>
+        <On Terms="OptionsChange; Option Shader Extreme" Send="SetVisibility"/>
+    </CActorSplat>
 </Catalog>

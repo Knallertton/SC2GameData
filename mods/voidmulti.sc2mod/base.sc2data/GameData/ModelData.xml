@@ -857,6 +857,10 @@
             <Flags index="Override" value="1"/>
         </RequiredAnimsEx>
     </CModel>
+    <CModel id="VespeneGeyserSplat">
+        <ScaleMax value="0.970000,0.970000,1.000000"/>
+        <ScaleMin value="0.970000,0.970000,1.000000"/>
+    </CModel>
     <CModel id="WarpgateResearchBeam" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\VoidPrismImpact\VoidPrismImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>

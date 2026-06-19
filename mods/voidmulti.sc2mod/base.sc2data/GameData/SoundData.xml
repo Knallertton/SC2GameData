@@ -401,6 +401,9 @@
         <DupeDestroyCount value="3"/>
         <Pitch value="7.000000,7.000000"/>
     </CSound>
+    <CSound id="WarpGate_TrainLoop">
+        <Pitch value="-1.150000,-1.150000"/>
+    </CSound>
     <CSound id="XelNagaObeliskConstructDoodadWorkA" parent="Ambience_Object">
         <EditorCategories value="Race:Neutral"/>
         <AssetArray File="Assets\Sounds\Zerus01_Volcanic_Rumble_1.ogg" FacialGroup=""/>

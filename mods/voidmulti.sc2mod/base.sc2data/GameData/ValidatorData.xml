@@ -40,6 +40,10 @@
         <CombineArray value="CasterHas10Energy"/>
         <CombineArray value="CasterHasBatteryOverchargeBehavior"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareOrderCount id="GatewayIsTraining">
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareOrderCount>
     <CValidatorCombine id="GatewayMorphingCombine">
         <CombineArray value="GatewayMorphingFree"/>
         <CombineArray value="GatewayMorphing"/>
@@ -102,6 +106,9 @@
         <ResultFailed value="Error,Error/CantTargetBattlecruiserHyperjump"/>
         <WhichUnit Value="Target"/>
         <AbilLink value="Hyperjump"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="WarpgateDemorphing">
+        <AbilLink value="MorphBackToGateway"/>
     </CValidatorUnitOrderQueue>
     <CValidatorPlayerRequirement id="ZealotSunderingImpactUpgraded">
         <WhichPlayer Value="Caster"/>
@@ -1178,20 +1185,21 @@
         <Vital value="Shields"/>
     </CValidatorUnitCompareVital>
     <CValidatorCombine id="QueenTargetFiltersInject">
-        <CombineArray value="QueenRangeCheckLE25Inject"/>
-        <CombineArray value="NoQueenNearTargetInject"/>
         <ResultFailed value="TargetIsOutOfRange"/>
+        <CombineArray value="QueenRangeCheckLE35Inject"/>
+        <CombineArray value="NoQueenNearTargetInject"/>
+        <CombineArray value="QueenInjectMacroHatch"/>
     </CValidatorCombine>
-    <CValidatorLocationCompareRange id="QueenRangeCheckLE25Inject">
+    <CValidatorLocationCompareRange id="QueenRangeCheckLE35Inject">
         <ResultFailed value="TargetIsOutOfRange"/>
         <WhichLocation Value="TargetUnit"/>
         <Compare value="LE"/>
-        <Range value="25"/>
+        <Range value="35"/>
     </CValidatorLocationCompareRange>
     <CValidatorLocationEnumArea id="NoQueenNearTargetInject" unitLink="Queen">
         <ResultFailed value="TargetIsOutOfRange"/>
         <WhichLocation Value="TargetUnit"/>
-        <AreaArray Count="0" Radius="12" Validator="IsQueen"/>
+        <AreaArray Count="0" Radius="9" Validator="IsQueen"/>
         <Compare value="Eq"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
         <LaunchLocation Value="TargetUnit"/>
@@ -1203,4 +1211,36 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="PsiStorm"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="IsChangeling">
+        <Value value="Changeling"/>
+        <Type value="SelectAlias"/>
+    </CValidatorUnitType>
+    <CValidatorUnitOrderQueue id="MuleOrderIsHarvest">
+        <AbilLink value="MULEGather"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="QueenInjectMacroHatch">
+        <CombineArray value="NoQueenNearTargetInject"/>
+        <CombineArray value="NoMineralNearQueenTargetInject"/>
+        <CombineArray value="2ndHatchIsNearQueenTargetInjectUnnamed"/>
+    </CValidatorCombine>
+    <CValidatorLocationEnumArea id="NoMineralNearQueenTargetInject" unitLink="Queen">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <WhichLocation Value="TargetUnit"/>
+        <AreaArray Radius="5" Validator="Minerals"/>
+        <Compare value="Eq"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <LaunchLocation Value="TargetUnit"/>
+        <SearchFilters value="Visible;Ally,Enemy,Worker,Missile,Stasis,Dead,Hidden"/>
+        <ExcludeArray Value="Target"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="2ndHatchIsNearQueenTargetInjectUnnamed" unitLink="Queen">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <WhichLocation Value="TargetUnit"/>
+        <AreaArray Radius="16" Validator="IsHatcheryLairOrHive"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <LaunchLocation Value="TargetUnit"/>
+        <SearchFilters value="Visible;Ally,Neutral,Enemy,Worker,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <ExcludeArray Value="Target"/>
+    </CValidatorLocationEnumArea>
 </Catalog>

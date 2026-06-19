@@ -13,7 +13,6 @@
         <InfoArray index="Ammo1">
             <Charge Link="Abil/##id##"/>
             <Cooldown Link="Abil/##id##"/>
-            <Flags index="AutoBuild" value="1"/>
         </InfoArray>
     </CAbilArmMagazine>
     <CAbilResearch id="ArmoryResearch">
@@ -482,12 +481,36 @@
         </InfoArray>
     </CAbilResearch>
     <CAbilTrain id="GatewayTrain">
-        <InfoArray index="Train1" Time="39.2"/>
-        <InfoArray index="Train2" Time="39.2"/>
-        <InfoArray index="Train4" Time="56"/>
-        <InfoArray index="Train5" Time="56"/>
-        <InfoArray index="Train6" Time="39.2"/>
-        <InfoArray index="Train7" Time="39.2"/>
+        <InfoArray index="Train1">
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+        </InfoArray>
+        <InfoArray index="Train2" Time="38">
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+        </InfoArray>
+        <InfoArray index="Train4" Time="60.66">
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+        </InfoArray>
+        <InfoArray index="Train5" Time="60.66">
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+        </InfoArray>
+        <InfoArray index="Train6" Time="32.66">
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+        </InfoArray>
+        <InfoArray index="Train7" Time="42">
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+        </InfoArray>
     </CAbilTrain>
     <CAbilBehavior id="GenerateCreep">
         <CmdButtonArray index="On">
@@ -797,6 +820,8 @@
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <Flags index="Interruptible" value="1"/>
+        <BehaviorOn value="WarpgateDemorphing"/>
+        <BehaviorOff value="WarpgateDemorphing"/>
     </CAbilMorph>
     <CAbilMorph id="MorphToBroodLord">
         <Flags index="IgnoreFacing" value="1"/>
@@ -1311,8 +1336,8 @@
             <Resource index="Custom" value="-1"/>
         </RefundFraction>
         <Cost>
-            <Resource index="Minerals" value="50"/>
-            <Resource index="Vespene" value="50"/>
+            <Resource index="Minerals" value="25"/>
+            <Resource index="Vespene" value="25"/>
         </Cost>
         <InfoArray index="0">
             <SectionArray index="Abils">
@@ -1344,23 +1369,41 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="ParasiticBomb"/>
     </CAbilEffectTarget>
     <CAbilWarpTrain id="WarpGateTrain">
-        <InfoArray index="Train1" Time="4.2">
+        <InfoArray index="Train1" Time="5.6">
             <Charge TimeStart="32.8" TimeUse="30.8"/>
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
         </InfoArray>
-        <InfoArray index="Train2" Time="4.2">
+        <InfoArray index="Train2" Time="5.6">
             <Charge TimeUse="30.8"/>
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
         </InfoArray>
-        <InfoArray index="Train4" Time="4.2">
+        <InfoArray index="Train4" Time="5.6">
             <Charge TimeUse="49"/>
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
         </InfoArray>
-        <InfoArray index="Train5" Time="4.2">
+        <InfoArray index="Train5" Time="5.6">
             <Charge TimeUse="49"/>
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
         </InfoArray>
-        <InfoArray index="Train6" Time="4.2">
+        <InfoArray index="Train6" Time="5.6">
             <Charge TimeUse="30.8"/>
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
         </InfoArray>
-        <InfoArray index="Train7" Time="4.2">
+        <InfoArray index="Train7" Time="5.6">
             <Charge TimeUse="30.8"/>
+            <Button>
+                <Flags index="ToSelection" value="1"/>
+            </Button>
         </InfoArray>
     </CAbilWarpTrain>
     <CAbilTransport id="WarpPrismTransport">
@@ -1973,7 +2016,6 @@
     <CAbilEffectTarget id="MULERepair">
         <TargetFilters index="0" value="Mechanical,Visible;Self,Enemy,Missile,Stasis,UnderConstruction,Dead,Hidden,Hallucination"/>
         <AutoCastFilters value="Visible;Neutral,Enemy"/>
-        <Flags index="AutoCastOn" value="1"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="Repair">
         <TargetFilters index="0" value="Mechanical,Visible;Self,Enemy,Missile,Stasis,UnderConstruction,Dead,Hidden,Hallucination"/>
@@ -2195,20 +2237,4 @@
     <CAbilTrain id="LarvaTrain">
         <Flags index="DisableCollision" value="0"/>
     </CAbilTrain>
-    <CAbilResearch id="GatewayResearch">
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
-        <InfoArray index="Research1" Time="140" Upgrade="WarpGateResearch">
-            <Resource index="Minerals" value="50"/>
-            <Resource index="Vespene" value="50"/>
-            <Charge>
-                <CountMax value="1"/>
-                <CountStart value="1"/>
-                <CountUse value="1"/>
-                <Location value="Player"/>
-            </Charge>
-            <Button DefaultButtonFace="ResearchWarpGate" State="Restricted" Requirements="LearnWarpGate">
-                <Flags index="ShowInGlossary" value="1"/>
-            </Button>
-        </InfoArray>
-    </CAbilResearch>
 </Catalog>
