@@ -126,7 +126,7 @@ Button/Name/HydraliskIncreasedMovementSpeed=이동 속도 증가
 Button/Name/InfestorEnsnare=휘감기
 Button/Name/KD8Charge=KD8 지뢰
 Button/Name/Larva=애벌레 선택
-Button/Name/LoadNearby=주변 적재
+Button/Name/LoadNearby=
 Button/Name/LockOnAir=공중 목표물 고정
 Button/Name/MagFieldLaunchers=자기장 발사기
 Button/Name/MorphtoObserver=관측 모드
@@ -179,7 +179,7 @@ Button/Name/hydraliskspeed=근육 보강 진화
 Button/Tooltip/ActivateStasisWard=주위 적들을 <d ref="Behavior,OracleStasisTrapTarget,Duration"/>초 동안 정지장 안에 가둡니다. 갇힌 유닛은 공격당하지 않으며 능력의 영향을 받지도 않습니다.
 Button/Tooltip/AdeptPiercingUpgrade=사도의 공격 속도가 45%만큼 증가합니다.
 Button/Tooltip/AdeptResearchPiercingUpgrade=<c val="ffff8a">사도</c>의 공격 속도가 45%만큼 증가합니다.
-Button/Tooltip/AmorphousArmorcloud=장막으로 지상 유닛을 가려 원거리 유닛으로부터 받는 피해를 <d ref="Behavior,AmorphousArmorcloud,DamageResponse.ModifyFraction100" precision="1"/>% 감소시킵니다. <d ref="Effect,AmorphousArmorcloudCP,PeriodCountEffect,AmorphousArmorcloudCP,PeriodicPeriodArray[0]"/>초 동안 지속됩니다.
+Button/Tooltip/AmorphousArmorcloud=장막으로 지상 유닛을 가려 공중 유닛으로부터 받는 피해를 <d ref="Behavior,AmorphousArmorcloud,DamageResponse.ModifyFraction*100" precision="1"/>% 감소시킵니다. <d ref="Effect,AmorphousArmorcloudCP,PeriodCount*Effect,AmorphousArmorcloudCP,PeriodicPeriodArray[0]"/>초 동안 지속됩니다.
 Button/Tooltip/AnionPulseCrystals=<c val="ffff8a">불사조</c>의 공격 사거리가 <d ref="$UpgradeEffectArrayValue:PhoenixRangeUpgrade:Weapon,IonCannons,Range$"/>만큼 증가합니다.
 Button/Tooltip/Armory=군수공장과 우주공항에서 생산하는 유닛의 무기와 장갑을 업그레이드합니다.<n/><n/><c val="ffff8a">사용 가능:</c><n/>- 화염기갑병 (군수공장)<n/>- 토르 (군수공장)
 Button/Tooltip/BanelingCocoon2=이 고치 안에서 저글링이 맹독충으로 변태 중입니다.
@@ -190,7 +190,7 @@ Button/Tooltip/BypassArmorDrone=적 유닛에게 광선을 집중시켜 방어�
 Button/Tooltip/CalldownMULE=선택한 광물 지대에 실험용 채광 기계인 지게로봇을 투하합니다. 지게로봇은 건설로봇보다 더 빠르게 광물을 채취합니다.<n/><n/>지게로봇은 <d ref="Behavior,MULETimedLife,Duration"/>초 후에 작동을 멈춥니다.
 Button/Tooltip/CarrierCapacity=우주모함 하나당 요격기의 최대 숫자가 8대에서 10대로 증가합니다.
 Button/Tooltip/CarrierLeashRangeUpgrade=<c val="ffff8a">요격기</c>의 활동 범위가 <d ref="$UpgradeEffectArrayValue:CarrierLeashRangeUpgrade:Abil,CarrierHangar,Leash$"/>만큼 증가합니다.
-Button/Tooltip/ChannelSnipe=신중하게 목표를 조준하여, <d ref="Effect,ChannelSnipeCreatePersistent,PeriodCount*Effect,ChannelSnipeCreatePersistent,PeriodicPeriodArray[0]" precision="2"/>초 동안 저격하여 <d ref="Effect,ChannelSnipeDamage,Amount"/>의 피해를 줍니다. 방어력을 무시합니다.<n/><n/><c val="#ColorAttackInfo">생체 유닛을 대상으로만 사용 가능</c>
+Button/Tooltip/ChannelSnipe=신중하게 목표를 조준하여, <d ref="Effect,ChannelSnipeCreatePersistent,PeriodCount*Effect,ChannelSnipeCreatePersistent,PeriodicPeriodArray[0]" precision="2"/>초 동안 피해를 받지 않으면 저격하여 <d ref="Effect,ChannelSnipeDamage,Amount"/>의 피해를 줍니다(사이오닉 유닛을 상대로 +<d ref="Effect,ChannelSnipeDamage,AttributeBonus[Psionic]"/>의 피해). 방어력을 무시합니다.<n/><n/><c val="#ColorAttackInfo">생체 유닛을 대상으로만 사용 가능</c>
 Button/Tooltip/Charge=광전사가 주위 적을 향해 돌진합니다. 추가로 광전사의 이동 속도가 증가합니다. <d ref="Abil,Charge,Cost.Cooldown.TimeUse"/>초에 한 번씩만 사용할 수 있습니다.
 Button/Tooltip/ChronoBoostEnergyCost=대상 구조물에 시간 증폭을 사용합니다. 해당 건물의 생산 및 연구 속도가 <d ref="Behavior,ChronoBoostEnergyCost,Duration"/>초 동안 <d ref="(((Behavior,ChronoBoostEnergyCost,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>%만큼 증가합니다.
 Button/Tooltip/CloakingField=적 유닛이 근처 유닛과 구조물을 보거나 공격하지 못하게 모선 주변에 은폐장을 <d ref="Behavior,CloakField,Duration"/>초 동안 생성합니다. 은폐 상태인 유닛은 탐지기나 탐지 효과로만 적에게 드러납니다.
@@ -275,7 +275,7 @@ Button/Tooltip/OracleBuildStasisTrap=대상 위치에 <d ref="Behavior,StasisWar
 Button/Tooltip/Overseer=고급 공중 탐지 유닛입니다. 대군주와 동일한 만큼의 지휘력을 공급합니다. 감시, 변신수 생성, 오염 능력을 사용할 수 있습니다.<n/><n/><c val="FFE303">탐지기</c>
 Button/Tooltip/ParasiticBomb=기생 구름을 생성하여 대상과 주위 적 공중 유닛에게 <d ref="Behavior,ParasiticBomb,Duration"/>초에 걸쳐 <d ref="Behavior,ParasiticBomb,Duration/Behavior,ParasiticBomb,Period*Effect,ParasiticBombDotDamage,Amount"/>의 피해를 줍니다. 대상이 죽으면 구름은 그 죽은 지점의 공중에 머물다 사라집니다.<n/><n/><c val="#ColorAttackInfo">지상 유닛 또는 구조물 대상 지정 불가</c>
 Button/Tooltip/PointDefense=다양한 적 원거리 발사체를 요격하는 자동 방어 레이저 장치입니다. 특수 공격은 무력화시킬 수 없습니다.<n/><n/><c val="f078ff">매 사격 시 10의 에너지 소모</c>
-Button/Tooltip/PsiStorm=<d time="8.4"/> 동안 지속되는 사이오닉 에너지의 폭풍을 생성하여, 대상 지역에 있는 모든 유닛에게 최대 <d ref="(Effect,PsiStormPersistent,PeriodCount * Effect,PsiStormDamage,Amount)+(2*Effect,PsiStormDamageInitial,Amount)"/>의 피해를 줍니다.
+Button/Tooltip/PsiStorm=<d time="8.4"/> 동안 지속되는 사이오닉 에너지의 폭풍을 생성하여, 대상 지역에 있는 모든 유닛에게 최대 140의 피해를 줍니다.
 Button/Tooltip/PsionicSurge=광전사의 돌진이 대상에게 <d ref="Effect,ChargingDamage,Amount"/>의 피해를 줍니다.
 Button/Tooltip/PurificationNova=<d ref="Behavior,PurificationNovaTargettedTarget,Duration"/>초 동안 지속되는 에너지 구체를 발사합니다. 구체는 지속 시간 후 강력한 폭발 에너지를 방출하여 주위 지상 유닛과 구조물에 <d ref="Effect,PurificationNovaDamage,Amount"/>의 방사 피해를 주고 추가로 <d ref="Effect,PurificationNovaDamage,ShieldBonus"/>의 보호막 피해를 줍니다. 에너지 구체가 활성화되어 있는 동안 분열기는 이동 불가 상태가 됩니다.
 Button/Tooltip/RapidReignitionSystem=의료선의 재연소 장치 점화의 재사용 대기시간이 <d time="[d ref='$UpgradeEffectArrayValue:MedivacIncreaseSpeedBoost:Abil,MedivacSpeedBoost,Cost[0].Cooldown.TimeUse$'/]"/>만큼 감소하고 이동 속도가 증가합니다.
@@ -443,6 +443,7 @@ Effect/Name/DarkTemplarBlinkAB=
 Effect/Name/DisruptorTransportUnloadPurificationNovaCooldownReset=Disruptor Transport Unload Purification Nova Cooldown Reset
 Effect/Name/EnergyRecharge=에너지 재충전
 Effect/Name/EnergyRechargePersistent=
+Effect/Name/ForcefieldMinusLifeTick=
 Effect/Name/FungalGrowthSlowMovementApplyBehavior=Fungal Growth Slow Movement Apply Behavior
 Effect/Name/FungalGrowthTargetOnCreepSwitch=Fungal Growth Target On Creep Switch
 Effect/Name/HighTemplarWeaponDamage=High Templar Weapon Damage
